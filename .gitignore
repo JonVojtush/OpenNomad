@@ -21,4 +21,4 @@
 *.wasm
 vendor/
 .vscode/
-styles/style.css
+web/styles/style.css

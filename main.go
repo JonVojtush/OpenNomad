@@ -1,20 +1,24 @@
-// https://github.com/golang/go/wiki/WebAssembly#getting-started
-
 package main
 
 import (
-	"log"
+	"net/http"
 
 	"github.com/yosssi/gcss"
 )
 
+var (
+	w http.ResponseWriter
+	r *http.Request
+)
+
+// Pre-process the .gcss stylesheet into .css
 func GCSS() {
-	if _, err := gcss.CompileFile("styles/style.gcss"); err != nil {
-		// http.Error(window, err.Error(), http.StatusInternalServerError)
-		log.Print(err)
-	} /*else {
-		http.ServeFile(window, r, cssPath)
-	}*/
+	cssPath, err := gcss.CompileFile("web/styles/style.gcss")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	http.ServeFile(w, r, cssPath)
 }
 
 func main() {

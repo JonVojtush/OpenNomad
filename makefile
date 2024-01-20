@@ -4,3 +4,7 @@ build:
 
 run: build
 	./OpenNomad_WASM
+
+clean:
+	go clean
+	@rm web/app.wasm
