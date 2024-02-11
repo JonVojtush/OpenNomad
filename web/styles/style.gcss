@@ -1,4 +1,16 @@
-body
+body 
   font: Monaco
   color: Green
-  background: DimGray
+  background: DarkGray
+
+.cursor
+  font-weight: 900
+  animation: blink 1s infinite
+
+@keyframes blink
+  0%
+    opacity: 1
+  50%
+    opacity: 0
+  100%
+    opacity: 1

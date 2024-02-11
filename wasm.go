@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -25,7 +24,7 @@ func launchServer() {
 func GCSS() {
 	_, err := gcss.CompileFile("web/styles/style.gcss") // Pre-process the .gcss stylesheet into .css
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("GCSS Error: %s", err)
 	}
 }
 
@@ -33,5 +32,5 @@ func main() {
 	flag.Parse()
 	GCSS()
 	launchServer()
-	fmt.Println("Hello, Jon!")
+	log.Println("This is not working...") // ERROR
 }

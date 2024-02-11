@@ -1,7 +1,7 @@
 build:
-	GOARCH=wasm GOOS=js go build -o web/app.wasm
+	tinygo build -o web/app.wasm -target wasm
 	go build -o OpenNomad.bin
-
+	
 run: build
 	./OpenNomad.bin
 

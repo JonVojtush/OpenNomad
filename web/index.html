@@ -1,14 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <title>OpenNomad</title>
   <meta charset="utf-8">
-  <script src="js/wasm_exec.js"></script>
-  <script src="js/index.js"></script>
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/wasm_exec.js" defer></script>
+  <script type="module" src="js/module.js" defer></script>
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
-<body>Hello Jon.<br>|</body>
+<body>
+  <p>
+    Hello Jon.<br>
+    ~$ <span class="cursor">|</span>
+  </p>
+  <h1>WebAssembly</h1>
+  <p>Add two numbers, using WebAssembly:</p>
+  <input type="number" id="a" value="2"> + <input type="number" id="b" value="2"> = <input type="number" id="result" readonly>
+</body>
 
 </html>
