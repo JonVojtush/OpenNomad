@@ -1,5 +1,5 @@
 build:
-	tinygo build -o web/app.wasm -target wasm
+	GOOS=wasip1 GOARCH=wasm go build -o web/app.wasm main.go
 	go build -o OpenNomad.bin
 	
 run: build
@@ -8,5 +8,4 @@ run: build
 clean:
 	go clean
 	@rm web/app.wasm
-	@rm web/styles/style.css
 	@rm OpenNomad.bin

@@ -16,5 +16,3 @@ vendor/
 
 # Built resources
 web/app.wasm
-web/module.wasm
-web/styles/style.css
